@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FarmLink AI</h1>
+        <p>Smart decisions for farmers</p>
+        <nav>
+            <a href="#login" id="login-link">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section id="login">
+            <h2>Login to FarmLink AI</h2>
+            <form id="login-form">
+                <label for="username">Username/Email ID:</label>
+                <input type="text" id="username" name="username">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <br>
+                <button type="submit">Login</button>
+                <p>
+                    New user?
+                    <button type="button" id="show-signup-btn" class="secondary-btn">Create Account</button>
+                </p>
+            </form>
+        </section>
+
+        <section id="signup" hidden>
+            <h2>Create New Account</h2>
+            <form id="signup-form">
+                <label for="new-username">Username/EmailID</label>
+                <input type="text" id="new-username" name="new-username">
+                <br>
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password">
+                <br>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+                <br>
+                <button type="submit">Create Account</button>
+                <p>
+                    Already have an account?
+                    <button type="button" id="show-login-btn" class="secondary-btn">Login</button>
+                </p>
+            </form>
+        </section>
+
+        <section id="home" hidden>
+            <h2>Welcome to FarmLink AI</h2>
+            <p>Connect • Analyze • Decide</p>
+            <button type="button" id="get-started-btn">Get Started</button>
+        </section>
+
+        <section id="farmer-input" hidden>
+            <h2>Enter Your Crop Details</h2>
+            <form id="farmer-form">
+                <label for="crop">Crop:</label>
+                <input id="crop">
+                <datalist id="crop" name="crop">
+                    <option value="tomato">Tomato</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="cotton">Cotton</option>
+                </datalist>
+                <br>
+                <label for="quantity">Quantity (kg):</label>
+                <input type="number" id="quantity" name="quantity" value="500">
+                <br>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="Bangalore">
+                <br>
+                <label for="harvest-days">Harvest in (days):</label>
+                <input type="number" id="harvest-days" name="harvest-days" value="3">
+                <br>
+                <button type="submit">Analyze</button>
+            </form>
+        </section>
+
+        <section id="analysis" hidden>
+            <h2>Analysing Your Crop...</h2>
+            <div id="status">
+                <div class="status-item">✓ Checking market</div>
+                <div class="status-item">✓ Checking buyers</div>
+                <div class="status-item">⏳ Assessing risk</div>
+                <div class="status-item">○ Preparing recommendation</div>
+            </div>
+        </section>
+
+        <section id="recommendation" hidden>
+            <h2>Your Recommendation</h2>
+            <div id="recommendation-content"></div>
+            <button type="button" id="new-analysis-btn">New Analysis</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 FarmLink AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
