@@ -31,9 +31,6 @@ Farmers can enter details such as crop type, quantity, location, and days until 
 - Express.js
 - MySQL
 
-### AI
-- Google Gemini API
-
 ### Database
 - MySQL
 
