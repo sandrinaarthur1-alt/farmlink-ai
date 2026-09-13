@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FarmLink AI</h1>
+        <p>Smart decisions for farmers</p>
+        <nav>
+            <a href="#login" id="login-link">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section id="login">
+            <div class="section-visual" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=85" alt="Multiple grain crops growing in a field">
+                <span class="visual-caption">Grow with confidence</span>
+            </div>
+            <h2>Login to FarmLink AI</h2>
+            <form id="login-form">
+                <label for="username">Username/Email ID:</label>
+                <input type="text" id="username" name="username">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <br>
+                <button type="submit">Login</button>
+                <p>
+                    New user?
+                    <button type="button" id="show-signup-btn" class="secondary-btn">Create Account</button>
+                </p>
+            </form>
+        </section>
+
+        <section id="signup" hidden>
+            <div class="section-visual" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1523742813108-8f3e7c1a1d6a?auto=format&fit=crop&w=900&q=85" alt="Farmer holding fresh produce">
+                <span class="visual-caption">Your farm, connected</span>
+            </div>
+            <h2>Create New Account</h2>
+            <form id="signup-form">
+                <label for="new-username">Username/EmailID</label>
+                <input type="text" id="new-username" name="new-username">
+                <br>
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password">
+                <br>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+                <br>
+                <button type="submit">Create Account</button>
+                <p>
+                    Already have an account?
+                    <button type="button" id="show-login-btn" class="secondary-btn">Login</button>
+                </p>
+            </form>
+        </section>
+
+        <section id="home" hidden>
+            <div class="section-visual" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=85" alt="Sunlit farmland viewed from above">
+                <span class="visual-caption">Make every harvest count</span>
+            </div>
+            <h2>Welcome to FarmLink AI</h2>
+            <p>Connect • Analyze • Decide</p>
+            <button type="button" id="get-started-btn">Get Started</button>
+        </section>
+
+        <section id="farmer-input" hidden>
+            <div class="section-visual" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=85" alt="Hands tending green seedlings">
+                <span class="visual-caption">Tell us about this harvest</span>
+            </div>
+            <h2>Enter Your Crop Details</h2>
+            <form id="farmer-form">
+                <label for="crop">Crop:</label>
+                <input id="crop">
+                <datalist id="crop" name="crop">
+                    <option value="tomato">Tomato</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="cotton">Cotton</option>
+                </datalist>
+                <br>
+                <label for="quantity">Quantity (kg):</label>
+                <input type="number" id="quantity" name="quantity" value="500">
+                <br>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="Bangalore">
+                <br>
+                <label for="harvest-days">Harvest in (days):</label>
+                <input type="number" id="harvest-days" name="harvest-days" value="3">
+                <br>
+                <button type="submit">Analyze</button>
+            </form>
+        </section>
+
+        <section id="analysis" hidden>
+            <div class="section-visual" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=900&q=85" alt="Healthy crop rows ready for analysis">
+                <span class="visual-caption">Reading the signals</span>
+            </div>
+            <h2>Analysing Your Crop...</h2>
+            <div id="status">
+                <div class="status-item">✓ Checking market</div>
+                <div class="status-item">✓ Checking buyers</div>
+                <div class="status-item">⏳ Assessing risk</div>
+                <div class="status-item">○ Preparing recommendation</div>
+            </div>
+        </section>
+
+        <section id="recommendation" hidden>
+            <div class="section-visual" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85" alt="Fresh produce arranged at a market">
+                <span class="visual-caption">A clearer path to market</span>
+            </div>
+            <h2>Your Recommendation</h2>
+            <div id="recommendation-content"></div>
+            <section id="transportation-recommendation" hidden>
+                <h3>Transportation Recommendation</h3>
+                <div id="transportation-content"></div>
+                <a id="get-directions-link" class="transport-directions" target="_blank" rel="noopener">Get Directions</a>
+                <p class="transport-disclaimer">Transportation details are estimates based on the available analysis. Verify road conditions, vehicle availability, market timings, and local regulations before transporting crops.</p>
+            </section>
+            <button type="button" id="ai-assistant-toggle" aria-expanded="false">Ask AI Farmer Assistant</button>
+            <div id="ai-assistant" hidden>
+                <h3>Ask FarmLink AI</h3>
+                <div class="ai-toolbar">
+                    <label for="ai-language">Language</label>
+                    <select id="ai-language">
+                        <option value="en">English</option>
+                        <option value="kn">Kannada</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                    <button type="button" id="ai-voice-btn" aria-label="Ask by voice">Microphone</button>
+                </div>
+                <div id="ai-quick-questions" aria-label="Quick questions">
+                    <button type="button" class="ai-question-btn" data-question="Explain my result">Explain my result</button>
+                    <button type="button" class="ai-question-btn" data-question="What should I do?">What should I do?</button>
+                    <button type="button" class="ai-question-btn" data-question="Explain the risk">Explain the risk</button>
+                    <button type="button" class="ai-question-btn" data-question="Why is this crop recommended?">Why is this crop recommended?</button>
+                    <button type="button" class="ai-question-btn" data-question="How can I reduce the risk?">How can I reduce the risk?</button>
+                    <button type="button" class="ai-question-btn" data-question="How much will transportation cost?">How much will transportation cost?</button>
+                    <button type="button" class="ai-question-btn" data-question="Which market is nearest to me?">Which market is nearest to me?</button>
+                </div>
+                <div id="ai-messages" aria-live="polite"></div>
+                <form id="ai-form">
+                    <label for="ai-question">Ask a question</label>
+                    <div class="ai-input-row">
+                        <input type="text" id="ai-question" autocomplete="off" placeholder="Ask about your result...">
+                        <button type="submit">Ask</button>
+                    </div>
+                </form>
+                <form id="transport-form" class="transport-form">
+                    <h4>Calculate Transportation</h4>
+                    <label for="transport-start">Starting Location</label>
+                    <input type="text" id="transport-start" required>
+                    <button type="button" id="use-location-btn" class="secondary-btn">Use My Location</button>
+                    <label for="transport-destination">Destination / Market</label>
+                    <input type="text" id="transport-destination" placeholder="Market or town" required>
+                    <label for="transport-crop">Crop</label>
+                    <input type="text" id="transport-crop" required>
+                    <label for="transport-quantity">Quantity (kg)</label>
+                    <input type="number" id="transport-quantity" min="1" required>
+                    <label for="transport-vehicle">Available Transport</label>
+                    <select id="transport-vehicle">
+                        <option value="auto">Choose best option</option>
+                        <option value="truck">Truck</option>
+                        <option value="mini-truck">Mini Truck</option>
+                        <option value="tractor">Tractor/Trolley</option>
+                        <option value="van">Van</option>
+                    </select>
+                    <button type="submit">Check Transportation</button>
+                </form>
+                <div id="transport-ai-result" class="transport-ai-result" aria-live="polite"></div>
+                <p class="ai-disclaimer">AI Assistant Disclaimer: This guidance is general and based only on information available on this website. For important decisions involving chemicals, pesticides, fertilizers, diseases, or significant costs, verify it with a qualified agricultural expert or local agriculture officer.</p>
+            </div>
+            <button type="button" id="new-analysis-btn">New Analysis</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 FarmLink AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
