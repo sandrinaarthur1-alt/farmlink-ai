@@ -1,4 +1,3 @@
-# farmlink-ai
 # 🌾 FarmLink AI
 
 FarmLink AI is an AI-powered platform that helps farmers find suitable buyers for their crops.
